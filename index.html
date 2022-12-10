@@ -48,11 +48,20 @@
                 width: 100%;
             }
         }
+        .unity-mobile #head_title {
+            display: none
+        }
+        .unity-mobile #head_text {
+            display: none
+        }
+        .unity-mobile #input {
+            display: none
+        }
     </style>
 </head>
 <body>
 
-    <h1 class="w3-jumbo w3-center"><b>ALTERATION HUNTING</b></h1>
+    <h1 id="head_title" class="w3-jumbo w3-center"><b>ALTERATION HUNTING</b></h1>
 
     <div id="unity-container" class="unity-desktop">
         <canvas id="unity-canvas" width=960 height=600></canvas>
@@ -70,13 +79,15 @@
         </div>
         <br /><br />
     </div>
-
+    <h1 id="head_text" class="w3-xlarge w3-text-green w3-center">
+        <i class="fa fa-info-circle"></i><b> HMD Compatibility.</b>
+    </h1>
     <!-- Input controls Section -->
-    <div class="w3-light-grey">
+    <div id="input" class="w3-light-grey">
         <div class="w3-row-padding">
             <div class="w3-col l8 m6">
-                <h1 class="w3-xxxlarge"><b>Simulated input controls</b></h1>
-                <h1 class="w3-xxlarge w3-text-red"><b>Keyboard and mouse</b>    <img src="TemplateData/keyboard_mouse.png" class="w3-image" width="200"></h1>
+                <h1 class="w3-xxlarge"><b>Simulated input controls</b></h1>
+                <h1 class="w3-xlarge w3-text-red"><b>Keyboard and mouse</b>    <img src="TemplateData/keyboard_mouse.png" class="w3-image" width="200"></h1>
             </div>
         </div>
         <div class="w3-center" style="background-color:#aaa;">
@@ -150,87 +161,6 @@
                 <tr>
                     <th style="text-align: left">Secondary button</th>
                     <td>N</td>
-            </table>
-        </div>
-    </div>
-
-    <div class="w3-padding-64 w3-light-grey">
-        <div class="w3-row-padding">
-            <div class="w3-col l8 m6">
-                <h1 class="w3-xxlarge w3-text-red"><b>Touchscreen</b>    <img src="TemplateData/screen_touch.png" class="w3-image" width="60"></h1>
-            </div>
-        </div>
-        <div class="w3-center" style="background-color:#aaa;">
-            <h3>Activate the devices</h3>
-            <table class="w3-text-black w3-center" style="width:100%">
-                <tr>
-                    <th><img src="TemplateData/controller.png" class="w3-image" width="200"></th>
-                    <th><img src="TemplateData/headset.png" class="w3-image" width="200"></th>
-                    <th><img src="TemplateData/controller.png" class="w3-image" style="transform:scaleX(-1)" width="200"></th>
-                </tr>
-                <tr>
-                    <th>Left controller</th>
-                    <th>Headset</th>
-                    <th>Right controller</th>
-                </tr>
-                <tr>
-                    <td>Toggle with 3 fingers tap</td>
-                    <td>Slide</td>
-                    <td>
-                        N/A
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="row">
-        </div>
-        <div class="column w3-center" style="background-color:#bbb">
-            <h3>Basic controls</h3>
-            <table class="w3-text-black" style="width:80%; margin-left:auto; margin-right:auto;">
-                <tr>
-                    <th style="text-align: left">Pan</th>
-                    <td>Slide</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Rotate</th>
-                    <td>Slide</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Move forward/backward</th>
-                    <td>N/A</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Inverse controls</th>
-                    <td>N/A</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Reset transform</th>
-                    <td>N/A</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Snap turn</th>
-                    <td>N/A</td>
-                </tr>
-            </table>
-        </div>
-        <div class="column w3-center" style="background-color:#ccc;">
-            <h3>Input controls</h3>
-            <table class="w3-text-black" style="width:80%; margin-left:auto; margin-right:auto;">
-                <tr>
-                    <th style="text-align: left">Grip</th>
-                    <td>Tap</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Trigger</th>
-                    <td>2 fingers tap </td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Primary button</th>
-                    <td>N/A</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Secondary button</th>
-                    <td>N/A</td>
             </table>
         </div>
     </div>
