@@ -1,276 +1,121 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Alteration hunting</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body, h1, h2, h3, h4, h5 {
-            font-family: "Poppins", sans-serif
-        }
-
-        body {
-            font-size: 16px;
-        }
-
-        img {
-            margin-bottom: 0px;
-        }
-
-        .mySlides {
-            display: none;
-        }
-        /* Create two equal columns that floats next to each other */
-        .column {
-            float: left;
-            width: 50%;
-            padding: 10px;
-            height: 300px; /* Should be removed. Only for demonstration */
-        }
-
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-        @media screen and (max-width: 900px) {
-            .column {
-                width: 100%;
-            }
-        }
-
-        .unity-mobile #head_title {
-            display: none
-        }
-
-        .unity-mobile #head_text {
-            display: none
-        }
-
-        .unity-mobile #input {
-            display: none
-        }
-    </style>
-</head>
-<body>
-
-    <h1 id="head_title" class="w3-jumbo w3-center"><b>ALTERATION HUNTING</b></h1>
-
+  </head>
+  <body>
     <div id="unity-container" class="unity-desktop">
-        <canvas id="unity-canvas" width=960 height=600></canvas>
-        <div id="unity-loading-bar">
-            <div id="unity-logo"></div>
-            <div id="unity-progress-bar-empty">
-                <div id="unity-progress-bar-full"></div>
-            </div>
+      <canvas id="unity-canvas" width=960 height=600></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
         </div>
-        <div id="unity-warning"> </div>
-        <div id="unity-footer">
-            <div id="unity-webgl-logo"></div>
-            <div id="unity-fullscreen-button"></div>
-            <div id="unity-build-title">Alteration hunting</div>
-        </div>
-        <br /><br />
+      </div>
+      <div id="unity-warning"> </div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Alteration hunting</div>
+      </div>
     </div>
-    <h1 id="head_text" class="w3-xlarge w3-text-green w3-center">
-        <i class="fa fa-info-circle"></i><b> HMD Compatibility.</b>
-    </h1>
-    <!-- Input controls Section -->
-    <div id="input" class="w3-light-grey">
-        <div class="w3-row-padding">
-            <div class="w3-col l8 m6">
-                <h1 class="w3-xxlarge"><b>Simulated input controls</b></h1>
-                <h1 class="w3-xlarge w3-text-red"><b>Keyboard and mouse</b>    <img src="TemplateData/keyboard_mouse.png" class="w3-image" width="200"></h1>
-            </div>
-        </div>
-        <div class="w3-center" style="background-color:#aaa;">
-            <h3>Activate the devices</h3>
-            <table class="w3-text-black w3-center" style="width:100%">
-                <tr>
-                    <th><img src="TemplateData/controller.png" class="w3-image" width="200"></th>
-                    <th><img src="TemplateData/headset.png" class="w3-image" width="200"></th>
-                    <th><img src="TemplateData/controller.png" class="w3-image" style="transform:scaleX(-1)" width="200"></th>
-                </tr>
-                <tr>
-                    <th>Left controller</th>
-                    <th>Headset</th>
-                    <th>Right Controller</th>
-                </tr>
-                <tr>
-                    <td>Hold Left Shift or toggle with T </td>
-                    <td>Hold Right-click</td>
-                    <td>
-                        Hold Spacebar or toggle with y
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="row">
-        </div>
-        <div class="column w3-center" style="background-color:#bbb">
-            <h3>Basic controls</h3>
-            <table class="w3-text-black" style="width:80%; margin-left:auto; margin-right:auto;">
-                <tr>
-                    <th style="text-align: left">Pan</th>
-                    <td>Move mouse</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Rotate</th>
-                    <td>Hold middle mouse</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Move forward/backward</th>
-                    <td>Scroll middle mouse</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Inverse controls</th>
-                    <td>R</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Reset transform</th>
-                    <td>V</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Snap turn</th>
-                    <td>A [left] or D [right]</td>
-                </tr>
-            </table>
-        </div>
-        <div class="column w3-center" style="background-color:#ccc;">
-            <h3>Input controls</h3>
-            <table class="w3-text-black" style="width:80%; margin-left:auto; margin-right:auto;">
-                <tr>
-                    <th style="text-align: left">Grip</th>
-                    <td>G</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Trigger</th>
-                    <td>Left-click</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Primary button</th>
-                    <td>B</td>
-                </tr>
-                <tr>
-                    <th style="text-align: left">Secondary button</th>
-                    <td>N</td>
-            </table>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="w3-container w3-light-grey w3-center w3-xlarge">
-        <div class="w3-section">
-            <a href="https://www.linkedin.com/in/miguel-casasnovas-bielsa-6a5426153">
-                <i class="fa fa-linkedin w3-hover-text-blue"></i>
-            </a>
-        </div>
-        <p class="w3-medium">By <a href="https://www.linkedin.com/in/miguel-casasnovas-bielsa-6a5426153" target="_blank" class="w3-hover-text-blue">Miguel Casasnovas Bielsa</a></p>
-    </footer>
-
     <script>
-        var container = document.querySelector("#unity-container");
-        var canvas = document.querySelector("#unity-canvas");
-        var loadingBar = document.querySelector("#unity-loading-bar");
-        var progressBarFull = document.querySelector("#unity-progress-bar-full");
-        var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-        var warningBanner = document.querySelector("#unity-warning");
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      var warningBanner = document.querySelector("#unity-warning");
 
-        // Shows a temporary message banner/ribbon for a few seconds, or
-        // a permanent error message on top of the canvas if type=='error'.
-        // If type=='warning', a yellow highlight color is used.
-        // Modify or remove this function to customize the visually presented
-        // way that non-critical warnings and error messages are presented to the
-        // user.
-        function unityShowBanner(msg, type) {
-            function updateBannerVisibility() {
-                warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-            }
-            var div = document.createElement('div');
-            div.innerHTML = msg;
-            warningBanner.appendChild(div);
-            if (type == 'error') div.style = 'background: red; padding: 10px;';
-            else {
-                if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-                setTimeout(function () {
-                    warningBanner.removeChild(div);
-                    updateBannerVisibility();
-                }, 5000);
-            }
+      // Shows a temporary message banner/ribbon for a few seconds, or
+      // a permanent error message on top of the canvas if type=='error'.
+      // If type=='warning', a yellow highlight color is used.
+      // Modify or remove this function to customize the visually presented
+      // way that non-critical warnings and error messages are presented to the
+      // user.
+      function unityShowBanner(msg, type) {
+        function updateBannerVisibility() {
+          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+        }
+        var div = document.createElement('div');
+        div.innerHTML = msg;
+        warningBanner.appendChild(div);
+        if (type == 'error') div.style = 'background: red; padding: 10px;';
+        else {
+          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+          setTimeout(function() {
+            warningBanner.removeChild(div);
             updateBannerVisibility();
+          }, 5000);
         }
+        updateBannerVisibility();
+      }
 
-        var buildUrl = "Build";
-        var loaderUrl = buildUrl + "/WebGL.loader.js";
-        var config = {
-            dataUrl: buildUrl + "/WebGL.data",
-            frameworkUrl: buildUrl + "/WebGL.framework.js",
-            codeUrl: buildUrl + "/WebGL.wasm",
-            streamingAssetsUrl: "StreamingAssets",
-            companyName: "com.Unity.AlterationHunting",
-            productName: "Alteration hunting",
-            productVersion: "0.1.0",
-            showBanner: unityShowBanner,
-        };
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/TFG.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/TFG.data",
+        frameworkUrl: buildUrl + "/TFG.framework.js",
+        codeUrl: buildUrl + "/TFG.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "com.Unity.AlterationHunting",
+        productName: "Alteration hunting",
+        productVersion: "0.1.0",
+        showBanner: unityShowBanner,
+      };
 
-        // By default Unity keeps WebGL canvas render target size matched with
-        // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-        // Set this to false if you want to decouple this synchronization from
-        // happening inside the engine, and you would instead like to size up
-        // the canvas DOM size and WebGL render target sizes yourself.
-        //config.matchWebGLToCanvasSize = false;
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
 
-        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            // Mobile device style: fill the whole browser client area with the game canvas:
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
 
-            var meta = document.createElement('meta');
-            meta.name = 'viewport';
-            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-            document.getElementsByTagName('head')[0].appendChild(meta);
-            container.className = "unity-mobile";
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        container.className = "unity-mobile";
 
-            // To lower canvas resolution on mobile devices to gain some
-            // performance, uncomment the following line:
-            // config.devicePixelRatio = 1;
+        // To lower canvas resolution on mobile devices to gain some
+        // performance, uncomment the following line:
+        // config.devicePixelRatio = 1;
 
-            canvas.style.width = window.innerWidth + 'px';
-            canvas.style.height = window.innerHeight + 'px';
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
 
-            unityShowBanner('WebGL builds are not supported on mobile devices.');
-        } else {
-            // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
+      } else {
+        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-            canvas.style.width = "960px";
-            canvas.style.height = "600px";
-        }
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
+      }
 
-        loadingBar.style.display = "block";
+      loadingBar.style.display = "block";
 
-        var script = document.createElement("script");
-        script.src = loaderUrl;
-        script.onload = () => {
-            createUnityInstance(canvas, config, (progress) => {
-                progressBarFull.style.width = 100 * progress + "%";
-            }).then((unityInstance) => {
-                loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                    unityInstance.SetFullscreen(1);
-                };
-            }).catch((message) => {
-                alert(message);
-            });
-        };
-        document.body.appendChild(script);
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+          };
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
     </script>
-</body>
+  </body>
 </html>
